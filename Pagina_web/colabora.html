@@ -1,0 +1,272 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Indice de Caminabilidad en la colonia Lomas de Padierna</title>
+    <meta charset="utf-8" />
+    <link rel="icon" href="data:," />
+    <meta name="description" content="Proyecto Final de la especialidad en Geomática" />
+    <meta name="keywords" content="html, caminabilidad, Lomas de Padierna, Geomática"/>
+    <meta name="author" content="Crisol, Azul y Nixi" />
+    <meta name="copyright" content="CentroGeo 2025" />
+    <meta name="robots" content="index,follow" />
+    <meta http-equiv="cache-control" content="no-cache"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- Estilo para la página -->
+    <link rel="stylesheet" href="css/estilo_1.css"> 
+    <link rel="stylesheet" href="css/estilo_colabora.css"> 
+    <!-- Agregando librerías de Leaflet-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <!--Agregando jQuery-->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <!-- Librería de graficación-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+
+
+<script src="https://kit.fontawesome.com/e5c13921d5.js" crossorigin="anonymous"></script>
+</head>
+
+<body id="body">
+
+    <header>
+        <!--menu de hamburguesa -->
+        <div class="icon_menu">
+            <i class="fa-solid fa-bars" id="btn_open"></i>
+        </div>
+        
+         <!--logos -->
+        <div class="logos">
+            <a href="https://secihti.mx/" target="_blank">
+            <img src="img/logo_secihti_footer_white.png" alt="Logo Izquierda" class="header-logoi"></a>
+            <div class="linea_vertical"></div>
+            <a href="https://www.centrogeo.org.mx/" target="_blank">
+            <img src="img/logo_centrogeo_wide-white.svg" alt="Logo Derecha" class="header-logod"></a>
+            <!--título -->
+            <h1 class="titulo-centro">índice de caminabilidad Lomas de Padierna</h1> 
+        </div>
+
+            
+       
+
+		 
+    </header>
+
+    <div class="menu_lateral" id="menu_lateral">
+
+            <div class="nombre_pagina">
+                <i class="fa-solid fa-person-walking"></i>
+                <h4>Indice de caminabilidad Lomas de Padierna</h4>
+                </div>
+
+                <div class="menu_opciones">
+
+                    <a href="inicio.html">
+                        <div class="opcion">
+                            <i class="fa-solid fa-house" title="Inicio"></i>
+                            <h4>Inicio</h4>
+                        </div>
+                    </a>
+
+                    <a href="proyecto.html">
+                        <div class="opcion">
+                            <i class="fa-solid fa-circle-info" title="Proyecto"></i>
+                            <h4>Proyecto</h4>
+                        </div>
+                    </a>
+
+                    <a href="indice_de_caminabilidad.html">
+                        <div class="opcion">
+                            <i class="fa-solid fa-shoe-prints" title="Índice de caminabilidad"></i>
+                            <h4>Índice de caminabilidad</h4>
+                        </div>
+                    </a>
+
+                    <a href=# class="submenu-toggle">
+                        <div class="opcion">
+                            <i class="fa-solid fa-list-ul" title="Indicadores" id="indicadores_btn"></i>
+                            <h4>Indicadores</h4>
+                        </div>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="transitable.html">Transitable</a></li>
+                        <li><a href="accesible.html">Accesible</a></li>
+                        <li><a href="seguro.html">Seguro</a></li>
+                        <li><a href="practico_comodo.html">Práctico y cómodo</a></li>
+                    </ul>
+
+                    <a href="galeria.html">
+                        <div class="opcion">
+                            <i class="fa-solid fa-images" title="Galeria"></i>
+                            <h4>Galería</h4>
+                        </div>
+                    </a>
+                    
+                    <a href="colabora.html" class="selected">
+                        <div class="opcion">
+                            <i class="fa-solid fa-map-location-dot" title="Colabora"></i>
+                            <h4>Colabora</h4>
+                        </div>
+                    </a>
+				    
+				    
+
+                </div>
+          </div>
+          <script src="js/script.js"></script>
+          <script src="js/script_colabora.js"></script>
+          <script src="js/guardar_colabora.js"></script>
+
+          <main class="contenido-principal">
+            <!-- Título -->
+            <div class="titulo-principal">
+                <h1>Colabora</h1>
+            </div>
+
+            <!-- Contenedor principal del mapa y los selectores -->
+            <div class="contenedor-mapa-filtros">
+                <!-- Mapa (3/4 del ancho) -->
+                <div id="mapa" class="mapa"></div>
+
+                <!-- Panel de selectores (1/4 del ancho) -->
+                <div class="panel-filtros">
+                <h2>Queremos saber tu opinión.</h2>
+            <form id= "formulario-consulta" method="post">
+                <p> Por favor ingresa tus datos.</p><br/>
+                <label for="nombre">Nombre:</label> <input type="text" placeholder="" id="nombre" name="nombre">
+                <label for="email">Email:</label><input type="email" placeholder="" id="email" name="email">
+                <label for="edad">Edad:</label><input type="number" placeholder="" id="edad" name="edad">
+                <label for="genero">Genero:</label>    
+                <select id="genero" name="genero">
+                    <option value="">Seleccione una opción</option>
+                    <option value="Hombre">Hombre</option>
+                    <option value="Mujer">Mujer</option>
+                    <option value="Otro">Otro</option>
+                </select>
+                <br>           
+                <p>En el mapa selecciona un frente de manzana que consideres que no es apta para caminar y 
+                    cuéntanos el por qué en el siguiente espacio, una vez que tengas todo listo ¡Envíalo!</p><br/>
+                <textarea id="mensaje" name="mensaje" rows="8" cols="47" placeholder="Ingresar Mensaje aqui"></textarea>
+                <input type="submit" name="button" value="Enviar" id="button"><br/>
+                <input type="hidden" id="nomvial" name="nomvial">
+                <input type="hidden" id="cve_unica" name="cve_unica">
+                    </form>   
+                <div id="mensaje-general" style="display:none; padding:10px; margin-bottom:10px; border-radius:5px;"></div>
+
+                </div>
+            </div>
+
+            
+            </main>
+
+          
+
+    <footer>
+       
+       <div class="container-footer-all">
+        
+            <div class="container-body">
+
+                <div class="colum1">
+                    <h1>Mas información acerca de CentroGeo</h1>
+
+                    <p> Es un centro público de investigación en Ciencias de Información Geoespacial, 
+                    integrado al Sistema Nacional de Centros de Investigación de la SECIHTI.<br> 
+
+                        A través de su trabajo CentroGeo busca contribuir a la solución de los problemas 
+                    y prioridades que el país demanda, ya sea contribuyendo con nuevo conocimiento 
+                    generado en la investigación que permita comprender diversos fenómenos que se 
+                    presentan en el territorio, o bien, a través de la aplicación del conocimiento 
+                    que deriva en desarrollos tecnológicos que son implementados en diversos contextos.</p>
+
+                </div>
+
+                
+
+<!--//////////////////////////////////////////////////////////// -->
+
+                <div class="colum2">
+                <h1>Redes Sociales</h1>
+
+                <div class="row">
+                    <a href="https://www.facebook.com/CentroGeo/" target="_blank">
+                        <i class="fa-brands fa-facebook"></i>
+                        <span> Síguenos en Facebook </span>
+                    </a>
+                </div>
+
+                <div class="row">
+                    <a href="https://x.com/CentroGeo_" target="_blank">
+                        <i class="fa-brands fa-square-x-twitter"></i>
+                        <span> Síguenos en X </span>
+                    </a>
+                </div>
+
+                <div class="row">
+                    <a href="https://www.instagram.com/centrogeo_/#" target="_blank">
+                        <i class="fa-brands fa-square-instagram"></i>
+                        <span> Síguenos en Instagram </span>
+                    </a>
+                </div>
+
+                <div class="row">
+                    <a href="https://www.youtube.com/user/cigget" target="_blank">
+                        <i class="fa-brands fa-youtube"></i>
+                        <span> Síguenos en YouTube </span>
+                    </a>
+                </div>
+
+
+
+
+                </div>
+
+                <div class="colum3">
+
+                    <h1>Información Contactos</h1>
+
+                    <div class="row2">
+                        <i class="fa-solid fa-building"></i>
+                        <label>Contoy 137, 
+                        Col. Lomas de Padierna
+                        Alcaldía Tlalpan 
+                        CP. 14240 
+                        Ciudad de México, México.</label>
+                    </div>
+
+                    <div class="row2">
+                        <i class="fa-solid fa-square-phone-flip"></i>
+                        <label>(52) (55) 2615 2508</label>
+                    </div>
+
+                    <div class="row2">
+                        <a href="https://myaccount.google.com/?utm_source=sign_in_no_continue&pli=1" target="_blank">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span> contacto@centrogeo.edu.mx. </span></a>
+                        
+                    </div>
+                    
+
+                </div>
+
+            </div>
+        
+        </div>
+        
+        <div class="container-footer">
+               <div class="footer">
+                    <div class="copyright">
+                        Centro de Investigación en Ciencias de Información Geoespacial | <a href="https://www.centrogeo.org.mx/">CentroGeo</a>
+                    </div>
+
+                    <div class="information">
+                        <a href="https://www.centrogeo.org.mx/" target="_blank">
+                        <img src="img/logo_centrogeo_wide-white.png"> </a>
+                    </div>
+                </div>
+
+            </div>
+        
+    </footer>
+
+</body>
+</html>
